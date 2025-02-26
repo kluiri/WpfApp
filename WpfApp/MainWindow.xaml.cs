@@ -23,7 +23,7 @@ public partial class MainWindow : Window
     }
 }
 
-public class Mitarbeiter
+/*public class Mitarbeiter
 {
     // 1. Attribute der Klasse Mitarbeiter
     public string Name { get; set; }
@@ -44,4 +44,4 @@ public class Mitarbeiter
         return $"Name: {Name}, Position: {Position}, Gehalt: {Gehalt:C}";
     }
 
-}
+}*/
