@@ -1,0 +1,30 @@
+﻿<Window x:Class="GUI_Uebung.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Uebung"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="298" Width="377">
+    <Grid>
+        <Label Content="Bitte hier den Namen der Person angeben: " HorizontalAlignment="Left" Margin="34,25,0,0" VerticalAlignment="Top"/>
+        <Button Content="Auswahl" HorizontalAlignment="Left" Margin="183,73,0,0" VerticalAlignment="Top" Click="Button_Auswahl_Click" FontSize="18"/>
+        <Label x:Name ="Label_Bezeichner_Kontostand" Content="Kontostand: " HorizontalAlignment="Left" Margin="42,174,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Kontostand" Content="0,00 €" HorizontalAlignment="Left" Margin="131,170,0,0" VerticalAlignment="Top"/>
+        <Button x:Name ="Button_Einzahlen" Content="Einzahlen" HorizontalAlignment="Left" Margin="61,229,0,0" VerticalAlignment="Top" Click="Button_Einzahlen_Click"/>
+        <Button x:Name ="Button_Auszahlen" Content="Auszahlen" HorizontalAlignment="Left" Margin="138,229,0,0" VerticalAlignment="Top" Click="Button_Auszahlen_Click"/>
+        <Label x:Name="Label_Bezeichner_Geldwert" Content="Geldwert: " HorizontalAlignment="Left" Margin="42,196,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_Betrag" HorizontalAlignment="Left" Margin="111,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Label_Euro" Content="€" HorizontalAlignment="Left" Margin="236,197,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBoxPersonen" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="125" Margin="40,51,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="{Binding SelectedItem.Name, ElementName=listBoxPersonen}" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,148,0,0" />
+        <Label x:Name="Label_Bewegung" Content="" HorizontalAlignment="Left" Margin="199,174,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
